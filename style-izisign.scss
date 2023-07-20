@@ -1,0 +1,586 @@
+@import "_globalVariables";
+@import "components/fonts";
+
+.page-izisign {
+    .container {
+        max-width: 1440px;
+    }
+
+    .bg-white-FFFFFF {
+        background: $white-FFFFFF !important;
+    }
+
+    .bg-grey-F2F2F2 {
+        background-color: $grey-F2F2F2;
+    }
+
+    .bg-green-027886 {
+        background: $green-027886;
+    }
+
+    h1 {
+        font-family: $f-FuturaPTCondExtraBold;
+        color: $grey-333333;
+    }
+
+    p {
+        color: $grey-333333;
+    }
+
+    .btn {
+        font-size: $px-16;
+        font-weight: $f-bold;
+        transition: all .3s ease;
+
+        &.arrow-right {
+            color: $white-FFFFFF;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto;
+            border-radius: 50px;
+            padding: 12px 30px 12px 40px;
+            background: $green-027886;
+
+            &::after {
+                transition: all .3s ease;
+                content: "";
+                display: inline-block;
+                width: 34px;
+                height: 24px;
+                margin-left: 5px;
+                background:  url('/on/demandware.static/-/Sites-CERTISIGN-BR-Library/default/dw7fcbf09e/images/Landing/izisign/right-arrow-white.png') 0 center no-repeat;
+            }
+
+            &:hover {
+                background-color: $blue-00314C;
+                &::after {
+                    background-position: right center;
+                }
+            }
+        }
+
+    }
+
+    .list-type-check {
+        list-style: none;
+        padding: 0;
+
+        li {
+            background: url('/on/demandware.static/-/Sites-CERTISIGN-BR-Library/default/dw7fcbf09e/images/Landing/izisign/check-list.png') 0 7px no-repeat;
+            padding-left: $px-25;
+            font-size: $px-16;
+            font-weight: $f-bold;
+            line-height: $px-24;
+            margin-bottom: $px-5;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .sec-01 {
+        h1 {
+            font-size: 40px;
+            color: $white-FFFFFF;
+            line-height: 40px;
+
+            span {
+                display: block;
+                font-family: inherit;
+                font-size: 30px;
+                line-height: 25px;
+                padding-bottom: 15px;
+            }
+        }
+
+        .bg-imagem {
+            background: none;
+        }
+
+        .txt-complementar {
+            display: none;
+        }
+
+        .form-izisign {
+            border-radius: 15px;
+            filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3));
+            padding: 24px;
+
+            h1 {
+                color: $grey-333333;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: $f-regular;
+
+                &.aceitar {
+                    font-size: 14px;
+                }
+            }
+
+            label {
+                display: block;
+                position: relative;
+                z-index: 9999;
+                font-weight: $f-bold;
+                font-size: 16px;
+                color: $grey-333333;
+                background: $white-FFFFFF;
+                width: fit-content;
+                margin-bottom: -10px;
+                margin-left: 15px;
+                padding: 0 5px;
+            }
+
+            input[type="text"],
+            input[type="email"] {
+                border: solid 1px $grey-333333;
+                border-radius: 8px;
+                padding: 10px;
+
+                &::placeholder {
+                    font-weight: $f-regular;
+                    font-size: $px-16;
+                    color: $grey-555555;
+                }
+            }
+
+            input[type="checkbox"] {
+                width: 24px;
+                height: 24px;
+
+                &:focus {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+        }
+    }
+
+    .sec-02 {
+        display: none;
+    }
+
+    .sec-03 {
+        h1 {
+            font-size: 30px;
+        }
+
+        .switches-container {
+            font-size: 16px;
+            font-weight: $f-bold;
+            border: solid 1px $grey-B5B5B5;
+
+            [type="radio"]:checked+label,
+            [type="radio"]:not(:checked)+label {
+                line-height: unset;
+                font-weight: unset;
+            }
+
+            --switches-bg-color: #FFF;
+            --switches-label-color: #B5B5B5;
+            --switch-bg-color: #027886;
+            --switch-text-color: #FFF;
+
+            height: 60px;
+            min-width: 180px;
+            max-width: 342px;
+            position: relative;
+            display: flex;
+            padding: 0;
+            position: relative;
+            background: var(--switches-bg-color);
+            line-height: 58px;
+            border-radius: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+
+            .text-white {
+                color: $white-FFFFFF;
+            }
+
+            input {
+                visibility: hidden !important;
+                position: absolute;
+                top: 0;
+            }
+
+            label {
+                width: 50%;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                cursor: pointer;
+                color: var(--switches-label-color);
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+
+            .switch-wrapper {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 50%;
+                padding: 4px;
+                z-index: 3;
+                transition: transform .5s cubic-bezier(.77, 0, .175, 1);
+
+                .switch {
+                    border-radius: 3rem;
+                    background: var(--switch-bg-color);
+                    height: 100%;
+
+                    div {
+                        width: 100%;
+                        text-align: center;
+                        opacity: 0;
+                        display: block;
+                        color: var(--switch-text-color);
+                        transition: opacity .2s cubic-bezier(.77, 0, .175, 1) .125s;
+                        will-change: opacity;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            input:nth-of-type(1):checked~.switch-wrapper {
+                transform: translateX(0%);
+            }
+
+            input:nth-of-type(2):checked~.switch-wrapper {
+                transform: translateX(100%);
+            }
+
+            input:nth-of-type(1):checked~.switch-wrapper .switch div:nth-of-type(1) {
+                opacity: 1;
+            }
+
+            input:nth-of-type(2):checked~.switch-wrapper .switch div:nth-of-type(2) {
+                opacity: 1;
+            }
+        }
+
+        .owl-stage-outer {
+            overflow: visible;
+            display: flex;
+            justify-content: space-between;
+
+            .owl-stage {
+                display: flex;
+                height: 100%;
+                margin-bottom: 20px;
+
+                .owl-item {
+                    .item {
+                        height: 100%;
+                        width: 100%;
+
+                        .card {
+                            height: 100%;
+                            border: solid 1px $grey-B5B5B5;
+                            border-radius: 20px;
+
+                            &.mais-vendido {
+                                border: solid 3px $green-027886;
+
+                                &::before {
+                                    content: "Mais Vendido";
+                                    background-color: $green-027886;
+                                    color: $white-FFFFFF;
+                                    font-weight: $f-bold;
+                                    font-size: 16px;
+                                    text-align: center;
+                                    width: 142px;
+                                    margin: -15px auto 0;
+                                    border-radius: 8px;
+                                    padding: 4px;
+                                }
+                            }
+
+                            .card-body {
+                                transition: all .3s ease;
+                                min-height: 300px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                padding: 10px 35px 15px;
+
+                                h1 {
+                                    font-size: 52px;
+                                }
+
+                                p {
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    font-weight: $f-regular;
+                                }
+
+                                .tag {
+                                    display: inline-block;
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    color: $white-FFFFFF;
+                                    background: $green-027886;
+                                    border-radius: 5px;
+                                    padding: 2px 8px;
+
+                                    &:empty {
+                                        padding: 0;
+                                    }
+                                }
+
+                                .line-through {
+                                    text-decoration: line-through;
+                                    font-size: 18px;
+                                    font-weight: $f-bold;
+                                    color: $orange-D27E00;
+                                }
+
+                                .valor {
+                                    font-family: $f-FuturaPTCondExtraBold;
+                                    font-size: 52px;
+
+                                    small {
+                                        font-size: 30px;
+                                        font-family: inherit;
+
+                                        span {
+                                            font-size: 18px;
+                                            font-weight: $f-bold;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .owl-dots {
+            span {
+                width: 16px;
+                height: 16px;
+            }
+
+            .active {
+                span {
+                    background: $green-027886;
+                }
+            }
+        }
+
+    }
+
+    .sec-04 {
+
+        .crop {
+            width: inherit;
+            height: 520px;
+            object-fit: none;
+            object-position: 50% 100%;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 45px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: $f-bold;
+        }
+
+        ul {
+            padding-left: 28px;
+
+            li {
+                font-size: 18px;
+                font-weight: $f-regular;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+// m — Large Screens
+@media (min-width: 1200px) {
+    .page-izisign {
+        overflow: hidden;
+
+        .sec-01 {
+            .bg-imagem {
+                background: url("/on/demandware.static/-/Sites-CERTISIGN-BR-Library/default/dw7fcbf09e/images/Landing/izisign/pessoa-com-notebook.png") 50px bottom no-repeat !important;
+            }
+
+            .txt-complementar {
+                display: block;
+                font-size: 18px;
+                color: $white-FFFFFF;
+                font-weight: $f-bold;
+                margin: 60px 0 0 230px;
+            }
+
+            .fix-margin {
+                padding-left: 160px !important;
+                padding-right: 160px !important;
+            }
+
+            .form-izisign {
+                padding: 25px 30px;
+            }
+        }
+
+        .sec-02 {
+            display: block;
+
+            .height-200 {
+                height: 200px;
+            }
+
+            .width-fix {
+                width: 98px;
+
+                &--v2 {
+                    width: 80px;
+                }
+            }
+
+            p,
+            .count {
+                font-family: $f-FuturaPTCondExtraBold;
+                font-size: 62px;
+                color: $grey-333333;
+                line-height: 68px;
+            }
+
+            small {
+                font-size: 18px;
+                line-height: 18px;
+                display: block;
+            }
+        }
+
+        .sec-03 {
+            h1 {
+                font-size: 40px;
+            }
+
+            .owl-stage-outer {
+                .owl-stage {
+                    .owl-item {
+                        .item {
+                            .card {
+                                border-radius: 20px;
+
+                                .card-body {
+
+                                    h1 {
+                                        //font-size: 52px;
+                                        font-size: 48px;
+                                        line-height: inherit;
+                                    }
+
+                                    p {
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        font-weight: $f-regular;
+                                    }
+
+                                    .tag {
+                                        display: inline-block;
+                                        font-weight: bold;
+                                        font-size: 16px;
+                                        color: $white-FFFFFF;
+                                        background: $green-027886;
+                                        border-radius: 5px;
+                                        padding: 2px 8px;
+                                    }
+
+                                    .line-through {
+                                        text-decoration: line-through;
+                                        font-size: 18px;
+                                        font-weight: $f-bold;
+                                        color: $orange-D27E00;
+                                    }
+
+                                    .valor {
+                                        font-family: $f-FuturaPTCondExtraBold;
+                                        // font-size: 52px;
+                                        font-size: 46px;
+
+                                        small {
+                                            font-size: 30px;
+                                            font-family: inherit;
+
+                                            span {
+                                                font-size: 18px;
+                                                font-weight: $f-bold;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .sec-04 {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .crop {
+                width: unset;
+                height: unset;
+                object-fit: unset;
+                object-position: unset;
+            }
+
+            .btn {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// xl — Extra Large Screens
+@media (min-width: 1440px) {
+    .page-izisign {
+        .sec-03 {
+            .owl-stage-outer {
+                .owl-stage {
+                    .owl-item {
+                        .item {
+                            .card {
+                                .card-body {
+                                    h1 {
+                                        font-size: 52px;
+                                    }
+    
+                                    .valor {
+                                        font-size: 52px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
